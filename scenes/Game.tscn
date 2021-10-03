@@ -46,6 +46,14 @@ __meta__ = {
 enabled = true
 cast_to = Vector2( 20, 0 )
 
+[node name="Up Detector L" type="RayCast2D" parent="Player"]
+enabled = true
+cast_to = Vector2( -10, -20 )
+
+[node name="Up Detector R" type="RayCast2D" parent="Player"]
+enabled = true
+cast_to = Vector2( 10, -20 )
+
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 1 )
 
@@ -62,7 +70,7 @@ __meta__ = {
 allow_tilt = false
 
 [node name="Train Wall Left" type="StaticBody2D" parent="Train Bed"]
-position = Vector2( -233, -41 )
+position = Vector2( -233, -16 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -70,7 +78,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Train Bed/Train Wall Left"]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 64 )
+region_rect = Rect2( 0, 0, 16, 24 )
 region_filter_clip = true
 __meta__ = {
 "_editor_description_": "
@@ -81,7 +89,7 @@ __meta__ = {
 shape = ExtResource( 8 )
 
 [node name="Train Wall Right" type="StaticBody2D" parent="Train Bed"]
-position = Vector2( 233, -41 )
+position = Vector2( 233, -16 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -89,7 +97,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Train Bed/Train Wall Right"]
 texture = ExtResource( 2 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 16, 64 )
+region_rect = Rect2( 0, 0, 16, 24 )
 region_filter_clip = true
 __meta__ = {
 "_editor_description_": "

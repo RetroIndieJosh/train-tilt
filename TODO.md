@@ -10,6 +10,8 @@
 
 ## Ideal
 
+- train angular acceleration (slow down getting closer to track)
+- jump landing more heavily influences tilt? so jumping up and down does more
 - title screen
 - multiple levels
     - change width of train bed (higher values = harder)
