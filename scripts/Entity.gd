@@ -9,13 +9,19 @@ const PUSH_TIME = 0.2
 
 export var weight = 1
 
+onready var game = $"../Game Manager"
+
 var slide_prevention = true
 var push_direction = 0
 var push_time = 0
 var use_gravity = true
 var velocity = Vector2.ZERO
 
+onready var break_sound = preload("res://sfx/box-break.wav")
+onready var push_sound = preload("res://sfx/box-break.wav")
+
 func _die():
+        game.play_sound(break_sound)
         queue_free()
 
 func _physics_process(delta):
@@ -62,3 +68,4 @@ func push(direction):
         push_time += PUSH_TIME
         #velocity.y -= PUSH_JUMP
         push_direction = direction
+        #game.play_sound(push_sound)

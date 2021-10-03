@@ -12,7 +12,6 @@ export var walk_speed = 100
 
 onready var down_detector = $"Down Detector"
 onready var forward_detector = $"Forward Detector"
-onready var game = $"../Game Manager"
 onready var detect_distance = forward_detector.cast_to.x
 onready var info = $"../Info"
 onready var line = $"../Line"

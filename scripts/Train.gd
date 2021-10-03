@@ -38,11 +38,9 @@ func _physics_process(delta):
         var total_weight = weight_right - weight_left
         rotation += ROT_SPEED * delta * total_weight
         if rotation < MIN_ROT || rotation > MAX_ROT:
-                print("brake")
                 brake_player.stream_paused = false
                 track.brake(delta)
         else:
-                print("reset brakes")
                 track.reset_brake()
                 brake_player.stream_paused = true
         rotation = clamp(rotation, MIN_ROT, MAX_ROT)

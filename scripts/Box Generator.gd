@@ -1,5 +1,7 @@
 extends Position2D
 
+const SPEED_REDUCTION_MULT = 0.98
+
 export var move_speed = 10
 export var base_sec_per_box = 5
 
@@ -26,14 +28,16 @@ func _process(delta):
                 spawn_box()
 
 func _ready():
-        reset()
+        reset(0)
 
-func reset():
+func reset(level):
         sec_per_box = base_sec_per_box
+        for _i in range(level):
+                sec_per_box *= SPEED_REDUCTION_MULT
 
 func spawn_box():
         var new_box = box.instance()
         new_box.position = position
         game.add_child(new_box)
-        sec_per_box *= 0.95
+        sec_per_box *= SPEED_REDUCTION_MULT
         info.set_data("Sec Per Box", sec_per_box)

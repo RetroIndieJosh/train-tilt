@@ -4,6 +4,7 @@ const TRACK_LENGTH_MIN = 1000
 const TRACK_LENGTH_SQR_INC = 100
 
 onready var rij_button = $"../UI/RIJ"
+onready var box_generator = $"../Box Generator"
 onready var brake_player = $"../Brake Player"
 onready var music_player = $"../Music Player"
 onready var sound_player = $"../Sound Player"
@@ -88,6 +89,7 @@ func end_game(sound=true):
 func start_level():
         track.reset(TRACK_LENGTH_MIN + TRACK_LENGTH_SQR_INC * level * level)
         player.reset()
+        box_generator.reset(level)
         level += 1
         rij_button.visible = false
         elapsed = 0

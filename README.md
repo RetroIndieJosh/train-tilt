@@ -10,23 +10,28 @@ It's a bit wonky, but I hope you'll get some fun out of it.
 
 ## Concept
 
-Get the train to the end as fast as possible.
+Deliver the cargo as quickly as possible - and as much of it as you can save.
 
-The train slows down if its edges touch the track. If it slows too much, game
-over!
+The train slows down if it touches the track. If it's too slow, game over!
 
-Your goal: Balance weight on the train (including your own) to get the fastest
-speed possible.
+Balance weight on the train (including your own) for maximum speed.
 
-Distance from the center matters.
+Distance from the center matters!
+
+What's the highest level you can reach? And the most boxes delivered?
 
 ## Controls
 
 - Move: A/D keys, arrows, d-pad, or left stick
 - Jump: space, key X, gamepad bottom button
-- Grab/Throw: alt, key C, gamepad left button (hold to grab)
+- Grab/Throw: alt, key C, gamepad left button (hold to grab - you will also auto-grab anything that falls on your head)
 - Pause: Esc, Pause/Start/+
 - Quit (after pausing): key Q, Back/Share/-
+
+## Known Issues
+
+You can get trapped/buried under too many boxes. Try jumping or grabbing and
+throwing to dig your way out. Otherwise you may have to wait and hope.
 
 ## Credits
 
