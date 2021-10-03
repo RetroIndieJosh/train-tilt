@@ -5,6 +5,7 @@ enum Side { LEFT, RIGHT }
 const ROT_SPEED = deg2rad(0.01)
 const MAX_ROT = deg2rad(16)
 const MIN_ROT = -MAX_ROT
+const TILT_MIN_PERCENT = 10
 
 export var allow_tilt = true
 
@@ -44,7 +45,7 @@ func _physics_process(delta):
 func calc_weight(entity) -> float:
         var percent_distance = 100 * abs(entity.position.x) / (width * 0.5)
         #info.set_data(entity.name + " % dist", percent_distance)
-        if percent_distance < 20:
+        if percent_distance < TILT_MIN_PERCENT:
                 return 0.0
         #info.set_data(entity.name + " weight", (percent_distance + 20) * entity.weight)
         return (percent_distance + 20) * entity.weight

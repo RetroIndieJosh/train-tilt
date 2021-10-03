@@ -22,9 +22,8 @@ extents = Vector2( 1920.75, 11.381 )
 
 [node name="Info" type="Label" parent="."]
 margin_left = -640.0
-margin_top = -360.0
 margin_right = -640.0
-margin_bottom = -346.0
+margin_bottom = 14.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource( 12 )
@@ -41,6 +40,7 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
+weight = 4
 
 [node name="Forward Detector" type="RayCast2D" parent="Player"]
 enabled = true
@@ -67,7 +67,6 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
-allow_tilt = false
 
 [node name="Train Wall Left" type="StaticBody2D" parent="Train Bed"]
 position = Vector2( -233, -16 )
@@ -146,3 +145,27 @@ current = true
 
 [node name="Box Generator" type="Position2D" parent="."]
 script = ExtResource( 6 )
+
+[node name="UI" type="Control" parent="."]
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="HSlider" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_bottom = -56.0
+rect_scale = Vector2( 1, 4 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+step = 0.01
+editable = false
+tick_count = 10
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
