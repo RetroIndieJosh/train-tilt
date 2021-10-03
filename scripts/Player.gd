@@ -25,12 +25,10 @@ func _physics_process(_delta):
         info.text = ""
         if forward_detector.is_colliding():
                 var col = forward_detector.get_collider()
-                info.text = "Touching " + str(col)
+                var dir = sign(velocity.x)
+                info.set_data("Last Push", "%s %d" % [col.name, dir])
                 if col is Entity:
-                        col.push(sign(velocity.x))
-
-func _ready():
-	pass
+                        col.push(dir)
 
 func dbg_draw_detector():
         line.clear_points()

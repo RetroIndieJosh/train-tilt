@@ -1,0 +1,7 @@
+- change width of train bed (higher values = harder)
+- generate boxes from the sky
+- pick up boxes
+- throw held box
+- player jump
+- what to do about boxes pushed against edge?
+- slow train when touching track
