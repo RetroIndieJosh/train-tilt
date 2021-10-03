@@ -2,6 +2,11 @@ extends Entity
 
 const COLOR_NORMAL = Color(1, 1, 1)
 const COLOR_HIGHLIGHT = Color(0.6, 0.6, 1)
+const HOLD_HEIGHT = 72
+const THROW_SPEED_X = 1000
+const THROW_SPEED_Y = 20
+
+export var walk_speed = 100
 
 onready var forward_detector = $"Forward Detector"
 onready var info = $"../Info"
@@ -16,7 +21,6 @@ var held_ent: Entity = null
 
 var can_grab = true
 var facing = 1
-var walk_speed = 100
 
 func _physics_process(_delta):
         handle_walk()
@@ -64,7 +68,7 @@ func handle_forward_collide():
                 forward_collide(target)
 
         if held_ent != null:
-                held_ent.position = position + Vector2.UP * 36
+                held_ent.position = position + Vector2.UP * HOLD_HEIGHT
                 info.set_data("Holding", "%s at %s" % [held_ent.name, held_ent.position])
                 if Input.is_action_just_pressed("grab"):
                         throw()
@@ -86,8 +90,8 @@ func handle_walk():
 
 func throw():
         held_ent.use_gravity = true
-        held_ent.velocity.x = facing * 500
-        held_ent.velocity.y = -10
+        held_ent.velocity.x = facing * THROW_SPEED_X
+        held_ent.velocity.y = -THROW_SPEED_Y
         held_ent.slide_prevention = false
         held_ent.get_node("Sprite").modulate = COLOR_NORMAL
         held_ent = null

@@ -1,20 +1,18 @@
 # LD 49 Attempt 2
 
-## Minimum Playable
-
-- victory screen
-- game over (fall onto track or too slow)
-- countdown to level start
-
 ## Ideal
 
+- music
+- advance levels
+        - spawn boxes more often 
+        - faster angular tilt
+        - wider train bed
+- only count weight of things on train (not in air)
 - player jump
 - train angular acceleration (slow down getting closer to track)
 - jump landing more heavily influences tilt? so jumping up and down does more
-- title screen
 - multiple levels
     - change width of train bed (higher values = harder)
-- music
 - how to handle box on box? (grabbing box underneath)
 
 ## Wish
@@ -24,6 +22,7 @@
 - sounds
 - web build
 - larger player and train scale
+- animate wheels
 
 ## CRITICAL BUGS
 

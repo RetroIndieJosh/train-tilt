@@ -38,6 +38,7 @@ func _physics_process(delta):
         if rotation < MIN_ROT || rotation > MAX_ROT:
                 track.brake(delta)
         rotation = clamp(rotation, MIN_ROT, MAX_ROT)
+        player.rotation = rotation
 
         info.set_data("Bed Rotation", rotation)
 

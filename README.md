@@ -18,9 +18,11 @@ Some objects are heavier than others, and distance from the center matters.
 
 ## Controls
 
-A/D keys, arrows, d-pad, or left stick: move player
-space, key X, gamepad bottom button: jump
-alt, key C, gamepad left button: grab box (hold) or throw held box
+- Move: A/D keys, arrows, d-pad, or left stick
+- Jump: space, key X, gamepad bottom button
+- Grab/Throw: alt, key C, gamepad left button (hold to grab)
+- Pause: Esc, Pause/Start/+
+- Quit (after pausing): key Q, Back/Share/-
 
 ## Credits
 

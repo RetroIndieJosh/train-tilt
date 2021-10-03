@@ -3,11 +3,12 @@
 [ext_resource path="res://scripts/Entity.gd" type="Script" id=1]
 [ext_resource path="res://art/box.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 13.7302, 13.9128 )
 
 [node name="Box" type="KinematicBody2D"]
 position = Vector2( -147.235, 65.4936 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -17,4 +18,4 @@ __meta__ = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://art/player.png" type="Texture" id=1]
 [ext_resource path="res://art/train-bed.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scripts/Train.gd" type="Script" id=11]
 [ext_resource path="res://scripts/Info.gd" type="Script" id=12]
 [ext_resource path="res://fonts/DisplayFont.tres" type="DynamicFont" id=13]
+[ext_resource path="res://art/face-glow.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.1359, 15.8859 )
@@ -40,26 +41,24 @@ __meta__ = {
 [node name="Time" type="Label" parent="."]
 margin_left = -620.0
 margin_top = -280.0
-margin_right = -640.0
-margin_bottom = -266.0
+margin_right = 620.0
+margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 13 )
-text = "time"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Line" type="Line2D" parent="."]
 width = 2.0
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 0.629974, 210.407 )
+position = Vector2( 0, 140 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
 weight = 4
+walk_speed = 300
 
 [node name="Forward Detector" type="RayCast2D" parent="Player"]
 enabled = true
@@ -80,7 +79,8 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Train Bed" type="KinematicBody2D" parent="."]
-position = Vector2( 0, 254 )
+position = Vector2( 0, 200 )
+scale = Vector2( 2, 2 )
 z_index = 1
 script = ExtResource( 11 )
 __meta__ = {
@@ -154,7 +154,7 @@ region_rect = Rect2( 0, 0, 2560, 32 )
 shape = SubResource( 2 )
 
 [node name="Train Support" type="Sprite" parent="."]
-position = Vector2( 0, 292 )
+position = Vector2( 0, 264 )
 scale = Vector2( 2, 2 )
 z_index = -1
 texture = ExtResource( 5 )
@@ -163,6 +163,7 @@ texture = ExtResource( 5 )
 current = true
 
 [node name="Box Generator" type="Position2D" parent="."]
+position = Vector2( 0, -200 )
 script = ExtResource( 6 )
 
 [node name="UI" type="Control" parent="."]
@@ -170,6 +171,18 @@ margin_left = -640.0
 margin_top = -360.0
 margin_right = 640.0
 margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RIJ" type="Button" parent="UI"]
+pause_mode = 2
+anchor_left = 0.9
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.2
+icon = ExtResource( 14 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -188,3 +201,5 @@ ticks_on_borders = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="UI/RIJ" to="Game Manager" method="_on_RIJ_pressed"]
