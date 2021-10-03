@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Track
 
 const ACCEL_SPEED = 5
 const BRAKE_SPEED = 10

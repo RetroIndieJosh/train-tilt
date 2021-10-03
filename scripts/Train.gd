@@ -6,6 +6,8 @@ const ROT_SPEED = deg2rad(0.01)
 const MAX_ROT = deg2rad(16)
 const MIN_ROT = -MAX_ROT
 
+export var allow_tilt = true
+
 onready var info = $"../Info"
 onready var track = $"../Track"
 onready var player = $"../Player"
@@ -15,6 +17,9 @@ func _ready():
         info.set_data("Train Width", width)
 
 func _physics_process(delta):
+        if not allow_tilt:
+                return
+
         var weight_right = 0
         var weight_left = 0
         for c in $"..".get_children():

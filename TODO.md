@@ -1,14 +1,12 @@
 # LD 49 Attempt 2
 
-## Minimum PLayable
+## Minimum Playable
 
-- destroy box when hit track
-- pick up boxes
-- throw held box
 - progress display (top or bottom of screen)
 - timer
 - timer display
 - victory screen
+- game over if jump off and hit track
 
 ## Ideal
 
@@ -16,11 +14,12 @@
 - multiple levels
     - change width of train bed (higher values = harder)
 - player jump
-- what to do about boxes pushed against edge?
 - music
+- how to handle box on box? (grabbing box underneath)
 
 ## Wish
 
+- hardest levels have no walls (can fall off)
 - sounds
 - web build
 - larger player and train scale
