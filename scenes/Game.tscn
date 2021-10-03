@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://art/player.png" type="Texture" id=1]
 [ext_resource path="res://art/train-bed.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://scripts/Info.gd" type="Script" id=12]
 [ext_resource path="res://fonts/DisplayFont.tres" type="DynamicFont" id=13]
 [ext_resource path="res://art/face-glow.png" type="Texture" id=14]
+[ext_resource path="res://music/train-tilt.ogg" type="AudioStream" id=15]
+[ext_resource path="res://sfx/brake.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.1359, 15.8859 )
@@ -63,6 +65,10 @@ walk_speed = 300
 [node name="Forward Detector" type="RayCast2D" parent="Player"]
 enabled = true
 cast_to = Vector2( 20, 0 )
+
+[node name="Down Detector" type="RayCast2D" parent="Player"]
+enabled = true
+cast_to = Vector2( 0, 20 )
 
 [node name="Up Detector L" type="RayCast2D" parent="Player"]
 enabled = true
@@ -201,5 +207,21 @@ ticks_on_borders = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Music Player" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 15 )
+autoplay = true
+
+[node name="Sound Player" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+autoplay = true
+
+[node name="Brake Player" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 16 )
+volume_db = -20.0
+autoplay = true
+stream_paused = true
 
 [connection signal="pressed" from="UI/RIJ" to="Game Manager" method="_on_RIJ_pressed"]

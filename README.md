@@ -2,19 +2,23 @@
 
 A game in Godot by Joshua McLean
 
-Developed in ~8 hours for the second half of Compo because I had a change of
-heart on game concept - mostly because I envisioned this one as complete
+Developed in under 9 hours for the second half of Compo because I had a change
+of heart on game concept - mostly because I envisioned this one as complete
 whereas the first idea was heading nowhere fast.
+
+It's a bit wonky, but I hope you'll get some fun out of it.
 
 ## Concept
 
 Get the train to the end as fast as possible.
 
-The train slows down if its edges touch the track.
+The train slows down if its edges touch the track. If it slows too much, game
+over!
 
-Your goal: Balance weight on the train (including your own).
+Your goal: Balance weight on the train (including your own) to get the fastest
+speed possible.
 
-Some objects are heavier than others, and distance from the center matters.
+Distance from the center matters.
 
 ## Controls
 

@@ -14,14 +14,26 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Entity.gd"
 }, {
+"base": "Entity",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Track",
 "language": "GDScript",
 "path": "res://scripts/Track.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Train",
+"language": "GDScript",
+"path": "res://scripts/Train.gd"
 } ]
 _global_script_class_icons={
 "Entity": "",
-"Track": ""
+"Player": "",
+"Track": "",
+"Train": ""
 }
 
 [application]

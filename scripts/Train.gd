@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Train
 
 enum Side { LEFT, RIGHT }
 
@@ -9,6 +10,7 @@ const TILT_MIN_PERCENT = 10
 
 export var allow_tilt = true
 
+onready var brake_player = $"../Brake Player"
 onready var info = $"../Info"
 onready var track = $"../Track"
 onready var player = $"../Player"
@@ -36,9 +38,15 @@ func _physics_process(delta):
         var total_weight = weight_right - weight_left
         rotation += ROT_SPEED * delta * total_weight
         if rotation < MIN_ROT || rotation > MAX_ROT:
+                print("brake")
+                brake_player.stream_paused = false
                 track.brake(delta)
+        else:
+                print("reset brakes")
+                track.reset_brake()
+                brake_player.stream_paused = true
         rotation = clamp(rotation, MIN_ROT, MAX_ROT)
-        player.rotation = rotation
+        #player.rotation = rotation
 
         info.set_data("Bed Rotation", rotation)
 

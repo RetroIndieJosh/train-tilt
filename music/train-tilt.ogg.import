@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/train-tilt.ogg-05060bbd8a01a9d91115b0cedc4f44ca.oggstr"
+
+[deps]
+
+source_file="res://music/train-tilt.ogg"
+dest_files=[ "res://.import/train-tilt.ogg-05060bbd8a01a9d91115b0cedc4f44ca.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

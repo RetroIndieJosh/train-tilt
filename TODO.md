@@ -3,6 +3,7 @@
 ## Ideal
 
 - music
+- bonus for how much cargo survives
 - advance levels
         - spawn boxes more often 
         - faster angular tilt

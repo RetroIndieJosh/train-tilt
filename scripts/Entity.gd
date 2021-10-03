@@ -15,6 +15,9 @@ var push_time = 0
 var use_gravity = true
 var velocity = Vector2.ZERO
 
+func _die():
+        queue_free()
+
 func _physics_process(delta):
         if push_time > 0:
                 push_time -= delta
@@ -25,7 +28,11 @@ func _physics_process(delta):
                         velocity.x = 0
 
         if use_gravity:
-                velocity.y += GRAVITY
+                # double gravity going down
+                if velocity.y < 0:
+                        velocity.y += GRAVITY * 0.5
+                else:
+                        velocity.y += GRAVITY
         else:
                 velocity.y = 0
 
@@ -47,7 +54,7 @@ func _physics_process(delta):
                 var collision = get_slide_collision(slide_count - 1)
                 var collider = collision.collider
                 if collider is Track:
-                        queue_free()
+                        _die()
 
 func push(direction):
         if direction != push_direction:
