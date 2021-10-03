@@ -2,11 +2,9 @@
 
 ## Minimum Playable
 
-- progress display (top or bottom of screen)
-- timer
-- timer display
 - victory screen
-- game over if jump off and hit track
+- game over (fall onto track or too slow)
+- countdown to level start
 
 ## Ideal
 
